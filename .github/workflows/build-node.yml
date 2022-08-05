@@ -10,11 +10,23 @@ on:
     branches: [ "main" ]
 
 jobs:
+  job:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v1
+      - name: Prepare
+        run: npm ci
+      - name: Lint
+        uses: mooyoul/tslint-actions@v1.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pattern: '*.ts'
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [14.x, 16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
     - uses: actions/checkout@v3
