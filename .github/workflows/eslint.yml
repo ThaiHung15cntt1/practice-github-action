@@ -9,5 +9,7 @@ jobs:
       matrix:
         node-version: [13.x]
     steps:
-      - name: Eslint check
-      uses: krizzu/eslint-check-action@v1.1.0
+    - name: Checkout 
+    uses: actions/checkout@v1
+    - name: Eslint check
+    uses: krizzu/eslint-check-action@v1.1.0
