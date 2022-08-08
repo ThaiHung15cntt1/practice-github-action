@@ -8,6 +8,7 @@ on:
 
 jobs:
   checkESlint:
+    name: 'check-eslint'
     runs-on: ubuntu-latest
     strategy:
       matrix:
