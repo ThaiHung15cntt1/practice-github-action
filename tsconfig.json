@@ -15,6 +15,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+  },
+  "rules": {
     "no-console":  {
       "severity": "warning",
       "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
